@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1 style="text-align: center"> Ứng dụng chuyển đổi tiền tệ</h1>
+Nhập số tiền bạn muốn chuyển:
+<input type="text" id="name">
+<button type="button" onclick="chuyentien()"> CONVERT
+</button>
+<form>
+    <select id="from">
+        <option value="VN">Việt Nam</option>
+        <option value="USD">USD</option>
+        <option value="JPY">Japan</option>
+    </select>
+    <select id="to">
+        <option value="VN">Việt Nam</option>
+        <option value="USD">USD</option>
+        <option value="JPY">Japan</option>
+    </select>
+</form>
+<script>
+    function chuyentien() {
+        let name1 = parseFloat(document.getElementById("name").value)
+        let loai1 = document.getElementById("from").value
+        let loai2 = document.getElementById("to").value
+        if (loai1 == "VN" && loai2 == "VN") {
+            let ketqua = name1
+            alert("ket qua = " + ketqua + " VND")
+        } else if (loai1 == "VN" && loai2 == "USD") {
+            let ketqua = name1 / 23000
+            alert("ket qua = " + ketqua + "USD")
+        } else if (loai1 == "VN" && loai2 == "JPY") {
+            let ketqua = name1 * 200
+            alert("ket qua = " + ketqua + "JPY")
+        } else if (loai1 == "USD" && loai2 == "USD") {
+            let ketqua = name1
+            alert("ket qua = " + ketqua + " USD")
+        } else if (loai1 == "USD" && loai2 == "VN") {
+            let ketqua = name1 * 23000
+            alert("ket qua = " + ketqua + " VND")
+        } else if (loai1 == "USD" && loai2 == "JPY") {
+            let ketqua = name1 * 108.65
+            alert("ket qua = " + ketqua + " JPY")
+        } else if (loai1 == "JPY" && loai2 == "JPY") {
+            let ketqua = name1
+            alert("ket qua = " + ketqua + " JPY")
+        } else if (loai1 == "JPY" && loai2 == "USD") {
+            let ketqua = name1 / 108.65
+            alert("ket qua = " + ketqua + " USD")
+        } else if (loai1 == "JPY" && loai2 == "VND") {
+            let ketqua = name1 / 200
+            alert("ket qua = " + ketqua + " VND")
+        }
+    }
+</script>
 </body>
 </html>
