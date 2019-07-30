@@ -27,6 +27,7 @@
             <td style="text-align: center"><input type="button" value="8" onclick="result.value+=this.value"></td>
             <td style="text-align: center"><input type="button" value="9" onclick="result.value+=this.value"></td>
             <td style="text-align: center"><input type="button" value="+" onclick="result.value+=this.value"></td>
+
         </tr>
         <tr>
             <td style="text-align: center"><input type="button" value="4" onclick="result.value+=this.value"></td>
@@ -42,7 +43,7 @@
             <td style="text-align: center"><input type="button" value="*" onclick="result.value+=this.value"></td>
         </tr>
         <tr>
-            <td style="text-align: center"><input type="button" value="." onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="C" onclick="clearDisplay()"></td>
             <td style="text-align: center"><input type="button" value="0" onclick="result.value+=this.value"></td>
             <td style="text-align: center"><input type="button" value="=" onclick="result.value=eval(result.value)">
             </td>
@@ -53,7 +54,10 @@
 </form>
 <button onclick="this.innerHTML=Date()">The time is?</button>
 <script>
-
+    function clearDisplay() {
+        let mydisplay = document.getElementById("result")
+        mydisplay.value = ""
+    }
 </script>
 </body>
 </html>
